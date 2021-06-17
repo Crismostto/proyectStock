@@ -12,5 +12,12 @@ class Articulos extends Model
     
 function Rubro(){
     return $this->belongsTo('App\Models\Rubro');
+   
+   }
+
+function DetalleComprobante(){
+    
+    return $this->hasMany('App\Models\DetalleComprobante');
 }
+
 }

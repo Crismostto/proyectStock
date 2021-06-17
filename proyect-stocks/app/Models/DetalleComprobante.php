@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class DetalleComprobante extends Model
 {
     use HasFactory;
+
+   function Articulo(){
+    return $this->belongsTo('App\Models\Articulos');
+  
+}
+   
 }
