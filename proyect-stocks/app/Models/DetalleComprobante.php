@@ -9,9 +9,15 @@ class DetalleComprobante extends Model
 {
     use HasFactory;
 
-   function Articulo(){
-    return $this->belongsTo('App\Models\Articulos');
+function Articulo(){
+  return $this->belongsTo('App\Models\Articulos');
   
+  }
+
+function Comprobante(){
+  return $this->belongsTo('App\Models\Comprobante');
+    
 }
-   
+    
+
 }

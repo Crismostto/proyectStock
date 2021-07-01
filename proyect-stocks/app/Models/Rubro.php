@@ -9,6 +9,7 @@ class Rubro extends Model
 {
     use HasFactory;
 
+protected $fillable = ['id_rubro','nombre','detalle'];
     
 function Articulo(){
     return $this->hasMany('App\Models\Articulos');

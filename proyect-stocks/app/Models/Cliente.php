@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
+
+function Comprobante(){
+
+    return $this->hasMany('App\Models\Comprobante');
+}
+
 }

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\rubros;
+use App\Models\Articulos;
+use App\Models\Rubro;
 use Illuminate\Http\Request;
 
 class RubrosController extends Controller
@@ -14,7 +15,10 @@ class RubrosController extends Controller
      */
     public function index()
     {
-        //
+        $rubro = Rubro::all();
+        return "hola estamos en rubros";
+        return $rubro;
+
     }
 
     /**
@@ -35,7 +39,8 @@ class RubrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rubro= Rubro::create($request -> all());
+        return $rubro;
     }
 
     /**
@@ -44,42 +49,4 @@ class RubrosController extends Controller
      * @param  \App\Models\rubros  $rubros
      * @return \Illuminate\Http\Response
      */
-    public function show(rubros $rubros)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\rubros  $rubros
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(rubros $rubros)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\rubros  $rubros
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, rubros $rubros)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\rubros  $rubros
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(rubros $rubros)
-    {
-        //
-    }
 }

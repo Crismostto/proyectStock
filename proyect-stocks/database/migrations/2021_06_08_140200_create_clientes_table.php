@@ -14,7 +14,7 @@ class CreateClientesTable extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->id('id_cliente');
+            $table->bigIncrements('id');
             $table->string('nombre');
             $table->string ('apellido');
             $table->string ('direccion');
@@ -33,5 +33,6 @@ class CreateClientesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('clientes');
+        Schema::dropIfExists('rubros');
     }
 }

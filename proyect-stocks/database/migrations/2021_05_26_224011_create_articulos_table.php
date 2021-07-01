@@ -14,12 +14,20 @@ class CreateArticulosTable extends Migration
      */
     public function up()
     {
+        Schema::create('rubros', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->string('detalle');
+            $table->timestamps();
+        });  
+        
         Schema::create('articulos', function (Blueprint $table) {
-            $table->id('id_articulo'); 
+            $table->id(); 
             $table->unsignedBigInteger('id_rubro');
-            $table->foreignId('id_rubro1')
-                    ->references('id_rubro')
-                    ->on ('rubros');
+            $table->foreign('id_rubro')
+                    ->references('id')
+                    ->on ('rubros')
+                    ->onDelete('cascade');
             $table->string('nombre');
             $table->float('precio');
             $table->integer('cant_max');

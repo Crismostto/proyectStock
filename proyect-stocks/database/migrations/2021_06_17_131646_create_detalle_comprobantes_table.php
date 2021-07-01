@@ -14,9 +14,15 @@ class CreateDetalleComprobantesTable extends Migration
     public function up()
     {
         Schema::create('detalle_comprobantes', function (Blueprint $table) {
-            $table->id('id_detalle');
-           // $table->id('id_comprobante');
-           // $table->id('id_articulo');
+            $table->id();
+            $table->unsignedBigInteger('id_comprobante');
+            $table->foreign('id_comprobante')
+                    ->references('id')
+                    ->on ('comprobantes');
+            $table->unsignedBigInteger('id_articulo');
+            $table->foreign('id_articulo')
+                    ->references('id')
+                    ->on ('articulos');
             $table->integer('cantidad');
             $table->float('precio');
             $table->timestamps();
