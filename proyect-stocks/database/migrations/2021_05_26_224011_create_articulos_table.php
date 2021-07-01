@@ -23,7 +23,7 @@ class CreateArticulosTable extends Migration
         
         Schema::create('articulos', function (Blueprint $table) {
             $table->id(); 
-            $table->unsignedBigInteger('id_rubro');
+            $table->unsignedBigInteger('id_rubro')->nullable();
             $table->foreign('id_rubro')
                     ->references('id')
                     ->on ('rubros')
